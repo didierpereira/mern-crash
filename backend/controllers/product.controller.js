@@ -54,7 +54,7 @@ export async function updateProduct (req,res) {
 
   try {
     await Product.findByIdAndUpdate(id, updates)
-    res.status(200).send({success:true,message: "Product updated successfully"})
+    res.status(200).send({success:true,message: "Product updated successfully", data: updates})
   } catch (error) {
     res.status(500).send({success:false,message: "Server error"})
   }
